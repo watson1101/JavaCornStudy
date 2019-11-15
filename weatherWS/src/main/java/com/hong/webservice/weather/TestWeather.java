@@ -53,7 +53,8 @@ public class TestWeather {
     // 调用查询某个城市天气的接口
     public static void invokeGetWeatherByOneCity(
             WeatherWebServiceSoap_BindingStub service) throws RemoteException {
-        String cityName = "南京";
+        //String cityName = "南京";
+        String cityName = "双鸭山";
         String[] weatherInfo = service.getWeatherbyCityName(cityName);
         for (String str : weatherInfo) {
             System.out.println(str);
