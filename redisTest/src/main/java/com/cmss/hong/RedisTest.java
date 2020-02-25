@@ -5,6 +5,7 @@ import redis.clients.jedis.Jedis;
 /**
  * @author hong
  * @date 2020/2/25
+ * from https://www.jianshu.com/p/0e86945acc6d
  */
 public class RedisTest {
     public static void main(String[] args){
