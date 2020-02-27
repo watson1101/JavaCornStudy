@@ -8,8 +8,8 @@ public class ClassTest {
     private String aaa;
 
     public static void main(String[] args) {
-        aaa =
-new ClassDemo(aaa,"cccccccccc");
+//        aaa =
+//new ClassDemo(aaa,"cccccccccc");
     }
 
     public class ClassDemo{

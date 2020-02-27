@@ -11,10 +11,7 @@ public class RedisTest {
     public static void main(String[] args){
         RedisTest redis = new RedisTest();
         try {
-            redis.test4();
-
-
-
+            redis.size();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -24,6 +21,14 @@ public class RedisTest {
         Jedis jedis = new Jedis("10.139.8.11");
         jedis.auth("123456");  //如果设置了密码 就填上这一句
         jedis.set("name", "zhang");
+        jedis.close();
+    }
+    public void size() throws Exception{
+        //创建一个jedis
+        Jedis jedis = new Jedis("10.139.8.11");
+        jedis.auth("123456");
+        long size = jedis.dbSize();
+        System.out.println("size = "+size);
         jedis.close();
     }
 
