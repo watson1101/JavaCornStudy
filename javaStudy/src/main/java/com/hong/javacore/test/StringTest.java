@@ -13,5 +13,7 @@ public class StringTest {
         String randomStr = UUID.randomUUID().toString();
         System.out.println(randomStr);
         System.out.println(System.currentTimeMillis());
+
+        System.out.println(s.substring(0,3)+"\n"+"ddd");
     }
 }

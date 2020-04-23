@@ -15,7 +15,7 @@ public class SeeDoctorTask implements Runnable {
     @Override
     public void run() {
         try {
-            Thread.sleep(3000);
+            Thread.sleep(6000);
             System.out.println("看大夫成功，大夫给开了些药单子");
         } catch (InterruptedException e) {
             e.printStackTrace();

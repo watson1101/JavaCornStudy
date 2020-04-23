@@ -7,7 +7,8 @@ public class UtilDemo {
         System.out.println("a = "+a);
     }
 
-    public static void initParam(String aaa){
+    public static String initParam(String aaa){
         a = aaa;
+        return a;
     }
 }

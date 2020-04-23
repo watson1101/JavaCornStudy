@@ -17,7 +17,7 @@ public class MyDemoMain {
 //        executor.execute(new CountTask(countDownLatch,7,"线程C"));
         // or 不适用线程池
         CountTask taskA =  new CountTask(countDownLatch,5,"线程A");
-        CountTask taskB =  new CountTask(countDownLatch,3,"线程B");
+        CountTask taskB =  new CountTask(countDownLatch,4,"线程B");
         CountTask taskC =  new CountTask(countDownLatch,7,"线程C");
         Thread thA = new Thread(taskA);
         Thread thB = new Thread(taskB);
