@@ -10,15 +10,23 @@ import java.util.concurrent.FutureTask;
  */
 public class DemoCallableImpl {
     public static void main(String[] args) {
-        FutureTask<User> ft = new FutureTask(new DemoCallable<>());
+        String str = "";
+        FutureTask<User> ft = new FutureTask(new DemoCallable<>(str));
         Thread t = new Thread(ft);
         t.start();
     }
 
     static class DemoCallable<T> implements Callable<T> {
+        private String str;
+
+        public DemoCallable(String str) {
+            this.str = str;
+        }
 
         public T call() throws Exception {
-            System.out.println("callable running.");
+            System.out.println(Thread.currentThread().getName() + " callable running,str = " + str);
+            Thread.sleep(1000);
+            str = str + Thread.currentThread().getName();
             return (T) (new User());
         }
     }

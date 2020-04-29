@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- escape -->
+<config>
+	<tablecategory type="NotSpaceJiake">
+		<tablelist>
+			<name>CM_DEVICE_OPTIC</name>
+			<name>CE_DEVICE_GJ</name>
+			<name>CE_DEVICE_GF</name>
+			<name>CE_DEVICE_GB</name>
+			<name>CE_DEVICE_JT</name>
+			<name>CE_DEVICE_DMT</name>
+			<name>CE_DEVICE_DDF</name>
+			<name>CE_DEVICE_ODF</name>
+			<name>CE_DEVICE_IDF</name>
+			<name>CM_WARE</name>
+			<name>CE_WARE_ODM</name>
+			<name>CE_WARE_FLANGE</name>
+			<name>CM_PORT_FIBER</name>
+			<name>CM_CABLE</name>
+			<name>CE_CABLE_SEGMENT</name>
+			<name>CE_CABLE_FIBER</name>
+			<name>CM_LINK_TRANSO</name>
+			<name>CE_LINK_OCIRCUIT</name>
+			<name>CE_LINK_OCIRCUITROUTE</name>
+			<name>CE_LINK_FIBERLINK</name>
+			<name>CE_LINK_JUMPLINK</name>
+			<name>CE_LINK_CABLELINK</name>
+			<name>CM_ASSISTANCE</name>
+			<name>CE_ASSISTANCE_RESERVE</name>
+			<name>CM_FACILITY</name>
+			<name>CE_FACILITY_WELL</name>
+			<name>CE_FACILITY_POLE</name>
+			<name>CE_FACILITY_SUPPORT</name>
+			<name>CE_FACILITY_UP</name>
+			<name>CE_FACILITY_STONE</name>
+			<name>CM_LAYINGSEGMENT</name>
+			<name>CE_LAYINGSEGMENT_WELLSEG</name>
+			<name>CE_LAYINGSEGMENT_POLESEG</name>
+			<name>CE_LAYINGSEGMENT_STONESEG</name>
+			<name>CE_LAYINGSEGMENT_UPSEG</name>
+			<name>CE_LAYINGSEGMENT_WALLSEG</name>
+			<name>CE_LAYINGSEGMENT_TUBEHOLE</name>
+			<name>CM_CABLESEG_SYS</name>
+			<name>CM_LAYINGSEG_SYS</name>
+			<name>CR_LINE_SYS_LINK</name>
+			<name>CR_NET_ENTITY</name>
+			<name>CR_DEVICE_AREA</name>
+			<name>CR_CABLE_CABLE</name>
+			<name>CR_CABLE_NODE</name>
+			<name>CR_LINK_CABLE</name>
+			<name>CR_LINK_LINK_TRANSO</name>
+			<name>CR_LAYINGSEGMENT_CABLE</name>
+			<name>RM_AREA_SITE</name>
+			<name>RM_AREA_RACKPOS</name>
+			<name>RM_AREA_ROOM</name>
+			<name>RM_AREA_RESPOINT</name>
+			<name>RM_AREA_ACCESSAREA</name>
+			<name>CR_ACCESSAREA_RS</name>
+			<name>RM_AREA_STANDARDADDRESS</name>
+			<name>RM_AREA_DC</name>
+			<name>RM_AREA_UPOS</name>
+			<name>CM_DEVICE_IDC</name>
+			<name>RM_AREA_RESIDENTIAL</name>
+			<name>CUSTOMER_RELATION_RESOURCES</name>
+			<name>CM_DEVICE_ONU</name>
+			<name>CM_ONU_PORT</name>
+			<name>cm_device_obd</name>
+			<name>CM_PORT_FIBER</name>
+			<name>CM_HOME_CUST_BUSI</name>
+			<name>RM_PROVINCE</name>
+			<name>RM_CITY</name>
+			<name>RM_COUNTY</name>
+			<name>RM_PROJECT</name>
+			<name>RM_DW</name>
+			<name>RM_TT_ROOM</name>
+			<name>RM_TT_SWITCHPOWER</name>
+			<name>RM_TT_TOWER</name>
+			<name>RM_TT_STATION</name>
+			<name>CM_DEVICE_RACK</name>
+		</tablelist>
+		<commonAlgorithm>
+			<col name="uuid">
+				<arg tablename="CM_DEVICE_RACK" value="{enum}(areacode)+{const}(1020201)+{col}(int_id)"/>
+				<arg tablename="{other}" value="{col}(int_id)"/>
+			</col>
+			<col name="resfdn">
+				<arg tablename="CM_DEVICE_RACK" value="{enum}(areacode)+{const}(1020201)+{col}(int_id)"/>
+				<arg tablename="{other}" value="{col}(int_id)"/>
+			</col>
+			<col name="is_locked">
+				<arg value="0"/>
+			</col>
+			<col name="stateflag">
+				<arg value="0"/>
+			</col>
+			<col name="version">
+				<arg value="0"/>
+			</col>
+			<col name="related_site">
+				<arg value="{enum}(areacode)+{const}(2010102)+{col}(related_site)"/>
+			</col>
+			<col name="equiproom_id">
+				<arg value="{enum}(areacode)+{const}(2010103)+{col}(equiproom_id)"/>
+			</col>
+			<col name="respoint_id">
+				<arg value="{enum}(areacode)+{const}(2010101)+{col}(respoint_id)"/>
+			</col>
+			<col name="related_gisaccessarea">
+				<arg value="{enum}(areacode)+{const}(2010105)+{col}(related_gisaccessarea)"/>
+			</col>
+			<col name="related_project">
+				<arg value="{enum}(areacode)+{const}(2020101)+{col}(related_project)"/>
+			</col>
+			<col name="related_supplycompany">
+				<arg value="{enum}(areacode)+{const}(2020101)+{col}(related_supplycompany)"/>
+			</col>
+			<col name="related_standardaddress">
+				<arg value="{enum}(areacode)+{const}(2010105)+{col}(related_standardaddress)"/>
+			</col>
+			<col name="china_tower_station_code">
+				<arg value="{enum}(areacode)+{const}(2020101)+{col}(china_tower_station_code)"/>
+			</col>
+			<col name="related_tower_room">
+				<arg value="{enum}(areacode)+{const}(2020101)+{col}(related_tower_room)"/>
+			</col>
+			<col name="related_dc">
+				<arg value="{enum}(areacode)+{const}(2020107)+{col}(related_dc)"/>
+			</col>
+			<col name="related_rackposition">
+				<arg value="{enum}(areacode)+{const}(2010104)+{col}(related_rackposition)"/>
+			</col>
+			<col name="start_port">
+				<arg value="{enum}(areacode)+{const}(1030109)+{col}(start_port)"/>
+			</col>
+			<col name="end_port">
+				<arg value="{enum}(areacode)+{const}(1030109)+{col}(end_port)"/>
+			</col>
+		</commonAlgorithm>
+	</tablecategory>
+	<areacode>
+		<province name="BJ" value="11">
+		<province name="AH" value="34">
+		<province name="FJ" value="35">
+		<province name="GS" value="62">
+		<province name="GD" value="44">
+		<province name="GX" value="45">
+		<province name="GZ" value="52">
+		<province name="HI" value="46">
+		<province name="HE" value="13">
+		<province name="HA" value="41">
+		<province name="HL" value="23">
+		<province name="HB" value="42">
+		<province name="HN" value="43">
+		<province name="JL" value="22">
+		<province name="JS" value="32">
+		<province name="JX" value="36">
+		<province name="LN" value="21">
+		<province name="NM" value="15">
+		<province name="NX" value="64">
+		<province name="QH" value="63">
+		<province name="SD" value="37">
+		<province name="SX" value="14">
+		<province name="SN" value="61">
+		<province name="SH" value="31">
+		<province name="SC" value="51">
+		<province name="TW" value="71">
+		<province name="TJ" value="12">
+		<province name="XZ" value="54">
+		<province name="XG" value="81">
+		<province name="XJ" value="65">
+		<province name="YN" value="53">
+		<province name="ZJ" value="33">
+		<province name="CQ" value="50">
+		<province name="AM" value="82">
+	</areacode>
+</config>
