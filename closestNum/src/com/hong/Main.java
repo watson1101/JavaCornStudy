@@ -6,6 +6,7 @@ import java.util.List;
 
 /**
  * 对于给定的一组数据，找到任意个组合，使之最接近给定的某个数
+ * 
  * @author hong
  *
  */
@@ -83,6 +84,7 @@ public class Main {
 
 	/**
 	 * 穷举，计算最接近的值
+	 * 
 	 * @param statusList
 	 * @param list
 	 * @param target
