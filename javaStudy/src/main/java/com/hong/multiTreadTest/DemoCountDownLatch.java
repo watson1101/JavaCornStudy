@@ -5,7 +5,17 @@ import java.util.concurrent.Executor;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-public class DemoRunable {
+/**
+ * 说明：test方法里通过CountDownLatch等待10个工作线程完成，然后继续执行System.out.print
+ */
+public class DemoCountDownLatch {
+
+    public static void main(String[] args) {
+        //String str1 = "";
+        new DemoCountDownLatch().test();
+        //new DemoRunable().test();
+    }
+
     private static String str1 = "";
     public synchronized void append(String xxx){
         str1 = str1+xxx;
@@ -52,13 +62,15 @@ public class DemoRunable {
             try {
                 Thread.sleep(1000);
                 //str1 += "11111111111";
-                append("1111111111");
-                System.out.println("子线程中 ：string = " + str1);
+                //append("1111111111");
+                append(Thread.currentThread().getName());
+                System.out.println(Thread.currentThread().getName()+"子线程中 ：string = " + str1);
                 System.out.println(Thread.currentThread().getName() + "执行完毕");
             } catch (InterruptedException e) {
                 e.printStackTrace();
             } finally {
                 countDownLatch.countDown();
+                System.out.println("Current count = "+countDownLatch.getCount());
             }
         }
     }
