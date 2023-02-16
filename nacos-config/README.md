@@ -6,5 +6,5 @@ create configuretion:nacos-config-dev.yaml
 user:
   id: 1
   name: james
-  age 18
+  age: 18
 
