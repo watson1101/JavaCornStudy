@@ -1,6 +1,6 @@
 package com.hong.test;
 
-public class DeadLockDemo  {
+public class DeadLockDemo {
     static Object a = new Object();
     static Object b = new Object();
 
@@ -12,11 +12,13 @@ public class DeadLockDemo  {
                     System.out.println("a is get lock");
                     try {
                         Thread.sleep(1000);
-                    } catch (InterruptedException e){
-                    e.printStackTrace();}
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                    synchronized (b) {
+                    }
                 }
-                synchronized (b) {
-                }
+
             }
         }).start();
         new Thread(new Runnable() {
@@ -26,11 +28,13 @@ public class DeadLockDemo  {
                     System.out.println("b is get lock");
                     try {
                         Thread.sleep(1000);
-                    } catch (InterruptedException e){
-                    e.printStackTrace();}
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                    synchronized (a) {
+                    }
                 }
-                synchronized (a) {
-                }
+
             }
         }).start();
     }
