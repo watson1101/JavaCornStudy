@@ -1,4 +1,6 @@
-public class Main {
+package com.hong.test;
+
+public class ThreadLocalDemo {
     public static void main(String[] args) {
         System.out.println("Hello world!");
 
