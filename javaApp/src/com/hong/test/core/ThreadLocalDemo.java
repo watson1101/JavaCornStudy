@@ -1,4 +1,4 @@
-package com.hong.test;
+package com.hong.test.core;
 
 public class ThreadLocalDemo {
     public static void main(String[] args) {

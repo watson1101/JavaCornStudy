@@ -1,4 +1,4 @@
-package com.hong.test;
+package com.hong.test.core;
 
 public class DeadLockDemo {
     static Object a = new Object();
