@@ -9,6 +9,11 @@ package com.hong.test.leetcode.easy;
  * 123 false
  */
 public class N9PalindromeNumber {
+    /**
+     * 利用输入的参数逆向重新生成了一个整数
+     * @param x
+     * @return
+     */
     public boolean isPalindrome(int x) {
         if (x < 0) {
             return false;
