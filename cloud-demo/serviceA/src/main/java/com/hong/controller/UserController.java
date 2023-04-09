@@ -8,6 +8,10 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+/**
+ * user入口，测试的功能有：两种不同方式bean注入，两种不同方式的参数请求，两种不同方式的过滤器，测试拦截器
+ * @author hongw
+ */
 @RestController
 @RequestMapping("/user")
 public class UserController {
@@ -59,7 +63,7 @@ public class UserController {
     }
 
     /**
-     * 测试基于WebFilter注解的拦截器，注意使用注解的方法无法设置优先级，因此UserFilterAnno 和 UserFilterAnno2 是随机先执行的
+     * 测试基于WebFilter注解的拦截器，注意使用注解的方法无法设置优先级，按照类名的字符串比较，小的先执行
      * 注意使用WebFilter注解需要在配置启动类 ServiceAApplication 上添加 @ServletComponentScan("com.hong.user.filter") 注解
      * @param name
      * @return

@@ -13,11 +13,9 @@ public class FilterConfig {
     public FilterRegistrationBean<UserFilter> registFilter() {
         FilterRegistrationBean registrationBean = new FilterRegistrationBean();
         registrationBean.setFilter(new UserFilter());
-//        registrationBean.addUrlPatterns("/userfileter/*");
         // 拦截所有请求
         registrationBean.addUrlPatterns("/*");
         registrationBean.setName("userFilter_BigOrderValue");
-//        registrationBean.setOrder(Integer.MAX_VALUE);
         registrationBean.setOrder(5);
         return registrationBean;
     }
