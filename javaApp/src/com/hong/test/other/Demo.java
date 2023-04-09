@@ -6,20 +6,20 @@ import java.util.List;
 import java.util.Set;
 
 /**
- *一
+ * 一
  * 1, 2, 3, 4, ..., 6666 中，数字 6 出现的次数为____。
  * 提示：1, 2, 3, 4, ... 20 中，数字 6 出现的次数为 2，分别出现在 6 和 16 中。
- *
+ * <p>
  * 二
  * 若一个数中不存在任何重复的数字，则称该数为“纯.粹.数”。1001, 1002, ..., 2333
  * 中，“纯.粹.数”的个数为____。
  * 提示：123、298 都是纯粹数，223、355 都不是“纯.粹.数” （分别数字 2 重复、数字 5 重复）
- *
+ * <p>
  * 第三题
  * 给出如下数列：1, 1, 1, 3, 5, 9, ... 其规律在于，第 n+3 个数 = 第 n 个数 + 第
  * n+1 个数 + 第 n+2 个数，其中，n 为正整数。该数列第 2023 个数的后四位（即除以10000 的余数）为__3281__。
  * 提示：3 = 1 + 1 + 1，5 = 1 + 1 + 3，9 = 1 + 3 + 5
- *
+ * <p>
  * 第四题
  * 有一款“神-币”，其价格随市场波动每天不同，但一天之内保持不变，其近 20 天
  * 的价格为:
@@ -30,7 +30,7 @@ import java.util.Set;
  * 提示：若“神币”近 4 天的价格为[1000, 1200, 1000, 1100]，理论上，少年近 4 天的最高
  * 可能收益为 300，具体操作方式为，第 1 天 1000 买入，第 2 天 1200 卖出，第 3 天 1000
  * 买入，第 4 天 1100 卖出。
- *
+ * <p>
  * 第五题
  * 不死之身的英雄与怪兽决斗，每回合中，怪兽先受到英雄攻击扣血，若存活，则进
  * 行一定程度的自愈回血。
@@ -47,11 +47,23 @@ import java.util.Set;
 
 public class Demo {
     public static void main(String[] args) {
-        number6();
+//        number6();
+//        test();
 //        pureNumber();
 //        findNumber(2023);
 //        max();
-//        battle();
+        battle();
+    }
+
+    private static void test() {
+        String str = "abbacbcda";
+        int count = 0;
+        for (int i = 0; i < str.length(); i++) {
+            if ("a".equals(str.charAt(i)+"")) {
+                count++;
+            }
+        }
+        System.out.println(count);
     }
 
 
@@ -59,12 +71,13 @@ public class Demo {
      * Find numbers that contains 6 in 0~6666 .
      */
     private static void number6() {
-        int n = 6666;
+        int n = 66;
         int count = 0;
         for (int i = 0; i <= n; i++) {
             if ((i + "").contains("6")) {
-//                System.out.println(i);
-                count++;
+
+                //System.out.println("" + i + ", tmp = " + tmp);
+
             }
         }
         System.out.println("包含6的数字有 " + count + " 个");

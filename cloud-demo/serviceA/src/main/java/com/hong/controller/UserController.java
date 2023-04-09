@@ -43,9 +43,31 @@ public class UserController {
     public String userTest3(@PathVariable("name") String name) {
         return "By name..." + userServiceImpl3.searchUser(name);
     }
+
     @RequestMapping("/usertest4/{name}")
     public String userTest4(@PathVariable("name") String name) {
         return "By name..." + userServiceImpl4.searchUser(name);
     }
+
+    /**
+     * 测试基于FilterRegistrationBean配置的过滤器
+     */
+
+    @RequestMapping("/userfilter/{name}")
+    public String userFileter(@PathVariable("name") String name) {
+        return "By name..." + userServiceImpl3.searchUser(name);
+    }
+
+    /**
+     * 测试基于WebFilter注解的拦截器，注意使用注解的方法无法设置优先级，因此UserFilterAnno 和 UserFilterAnno2 是随机先执行的
+     * 注意使用WebFilter注解需要在配置启动类 ServiceAApplication 上添加 @ServletComponentScan("com.hong.user.filter") 注解
+     * @param name
+     * @return
+     */
+    @RequestMapping("/userfilteranno/{name}")
+    public String userFilterAnno(@PathVariable("name") String name) {
+        return "By name..." + userServiceImpl3.searchUser(name);
+    }
+
 
 }
