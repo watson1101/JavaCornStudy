@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>shop-product-server</artifactId>
+    <artifactId>shop-order-server</artifactId>
 
     <dependencies>
         <dependency>
@@ -27,12 +27,15 @@
         </dependency>
         <dependency>
             <groupId>com.hong</groupId>
+            <artifactId>shop-order-api</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.hong</groupId>
             <artifactId>shop-product-api</artifactId>
             <version>1.0.0</version>
         </dependency>
     </dependencies>
-
-
 
     <properties>
         <maven.compiler.source>11</maven.compiler.source>
