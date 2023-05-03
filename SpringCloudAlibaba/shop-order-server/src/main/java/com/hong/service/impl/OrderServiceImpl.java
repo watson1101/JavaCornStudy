@@ -35,7 +35,7 @@ public class OrderServiceImpl extends ServiceImpl<OrderMapper, Order> implements
 //        p.setPrice(3000d);
 
         // 远程调用方案一：
-        String url = "http://localhost:8081/product/1";
+        String url = "http://localhost:8081/product/" + pid;
         // param1: url， param2: 相应返回值的类型
         Product p = restTemplate.getForObject(url, Product.class);
 
