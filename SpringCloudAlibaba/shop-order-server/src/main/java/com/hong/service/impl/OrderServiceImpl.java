@@ -61,11 +61,17 @@ public class OrderServiceImpl extends ServiceImpl<OrderMapper, Order> implements
 //        p = restTemplate.getForObject(url, Product.class);
 
         // 方案三：手动负载均衡
-        List<ServiceInstance> instances = discoveryClient.getInstances("order-service");
-        // 随机选取服务实例
-        int index = new Random().nextInt(instances.size());
-        ServiceInstance serviceInstance = instances.get(index);
-        String url = "http://" + serviceInstance.getHost() + ":" + serviceInstance.getPort() + "/product/" + pid;
+        // 缺点：代码不够优雅
+//        List<ServiceInstance> instances = discoveryClient.getInstances("order-service");
+//        // 随机选取服务实例
+//        int index = new Random().nextInt(instances.size());
+//        ServiceInstance serviceInstance = instances.get(index);
+//        String url = "http://" + serviceInstance.getHost() + ":" + serviceInstance.getPort() + "/product/" + pid;
+//        p = restTemplate.getForObject(url, Product.class);
+
+        // 方案四：使用负载均衡组件 ribbon --@LoadBalanced --只需要在启动类的 RestTemplate 方法上添加一个注解，不需要其他的步骤
+        // 只需要在url中直接写服务的名称即可，直接拼接在字符串中<>
+        String url = "http://product-service/product/" + pid;
         p = restTemplate.getForObject(url, Product.class);
 
 

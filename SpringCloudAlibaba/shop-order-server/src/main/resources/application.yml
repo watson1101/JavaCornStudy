@@ -12,3 +12,8 @@ spring:
     nacos:
       discovery:
         server-addr: 192.168.83.10:8848
+
+# ribbon balance rule
+product-service: # provider serverId
+  ribbon:
+    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule
