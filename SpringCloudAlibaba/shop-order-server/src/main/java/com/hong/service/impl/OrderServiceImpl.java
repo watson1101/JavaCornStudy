@@ -13,6 +13,7 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.client.RestTemplate;
 
 import java.util.List;
+import java.util.Random;
 
 @Service
 @Transactional
@@ -54,10 +55,19 @@ public class OrderServiceImpl extends ServiceImpl<OrderMapper, Order> implements
         // 方案二： 使用 nacos-DiscoveryClient ，消除硬编码
         // 缺点：无法进行负载均衡
         // 获取实例对象--获取注册中心中的服务实例 其中参数 serviceId 就是nacos的服务列表中的第一列 “服务名”
+//        List<ServiceInstance> instances = discoveryClient.getInstances("order-service");
+//        ServiceInstance serviceInstance = instances.get(0);
+//        String url = "http://" + serviceInstance.getHost() + ":" + serviceInstance.getPort() + "/product/" + pid;
+//        p = restTemplate.getForObject(url, Product.class);
+
+        // 方案三：手动负载均衡
         List<ServiceInstance> instances = discoveryClient.getInstances("order-service");
-        ServiceInstance serviceInstance = instances.get(0);
+        // 随机选取服务实例
+        int index = new Random().nextInt(instances.size());
+        ServiceInstance serviceInstance = instances.get(index);
         String url = "http://" + serviceInstance.getHost() + ":" + serviceInstance.getPort() + "/product/" + pid;
         p = restTemplate.getForObject(url, Product.class);
+
 
         order.setPid(p.getId());
         order.setProductName(p.getName());
