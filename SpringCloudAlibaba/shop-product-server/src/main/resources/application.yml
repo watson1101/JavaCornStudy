@@ -1,0 +1,10 @@
+server:
+  port: 8081
+spring:
+  application:
+    name: product-service
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://192.168.83.10:3306/shop-product?useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=UTC
+    username: hong
+    password: 123456
