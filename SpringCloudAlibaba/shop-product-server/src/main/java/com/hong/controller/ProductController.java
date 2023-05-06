@@ -26,7 +26,6 @@ public class ProductController {
     public Product findByPid(@PathVariable("pid") Long pid) {
         log.info("查询{}号商品信息", pid);
         Product product = productSevice.getById(pid);
-        // 这里拼接 port 是为了方便辨识负载均衡走了哪个服务
         product.setName(product.getName()+"_"+port);
         log.info("商品查询成功，内容为{}", JSON.toJSONString(product));
         return product;

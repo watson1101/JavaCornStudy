@@ -3,6 +3,7 @@ package com.hong.service.impl;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.hong.domain.Order;
 import com.hong.domain.Product;
+import com.hong.feign.ProductFeignService;
 import com.hong.mapper.OrderMapper;
 import com.hong.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,6 +25,9 @@ public class OrderServiceImpl extends ServiceImpl<OrderMapper, Order> implements
      */
     @Autowired
     private RestTemplate restTemplate;
+
+    @Autowired
+    private ProductFeignService productFeignService;
 
     /**
      * DiscoveryClient 是在java中nacos注册中心的抽象类，代指nacos注册中心，类似spring中的applicationContext容器
@@ -73,6 +77,8 @@ public class OrderServiceImpl extends ServiceImpl<OrderMapper, Order> implements
         // 只需要在url中直接写服务的名称即可，直接拼接在字符串中<>
         String url = "http://product-service/product/" + pid;
         p = restTemplate.getForObject(url, Product.class);
+// 方案五：feign
+        p= productFeignService.findByPid(pid);
 
 
         order.setPid(p.getId());
