@@ -12,6 +12,11 @@ spring:
     nacos:
       discovery:
         server-addr: 192.168.83.10:8848
+    sentinel:
+      transport:
+        port: 8719
+        dashboard: 192.168.83.10:8070
+
 
 # ribbon balance rule
 product-service: # provider serverId
